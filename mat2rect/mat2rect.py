@@ -1,6 +1,7 @@
 import scipy.io
 import numpy as np
 
+
 class Rectangle:
     x_min = None
     x_max = None
@@ -10,8 +11,10 @@ class Rectangle:
     def __str__(self):
         return f"P1: [{self.x_min}, {self.y_min}], P2: [{self.x_max}, {self.y_max}]"
 
+
 def mat2rect(mat):
-    mat = mat['map']
+    mat = mat["map"]
+    mat = np.flip(mat, 0)
     rectangles = []
     height = mat.shape[0]
     length = mat.shape[1]
@@ -28,9 +31,9 @@ def mat2rect(mat):
                         validRect = False
                 if validRect:
                     rect.x_max = i
-                    column[rect.y_min:rect.y_max+1] = 0
+                    column[rect.y_min : rect.y_max + 1] = 0
 
-        for j in range(height): 
+        for j in range(height):
             if column[j] == 1 and not newrectangle:
                 start = j
                 end = j
