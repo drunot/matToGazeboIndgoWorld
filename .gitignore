@@ -168,3 +168,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+
+#Remove auto generated files.
+
+*_run.sh
+turtlebot_mw_*.launch
+turtlebot_mw_*.world
