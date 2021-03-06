@@ -34,11 +34,11 @@ def createWall(
     cBox = ET.SubElement(cgeometry, "box")
     cSize = ET.SubElement(cBox, "size")
     if not rotated:
-        X = startx - endx
-        Y = starty - endy
+        X = endx - startx
+        Y = endy - starty
     else:
-        Y = startx - endx
-        X = starty - endy
+        Y = endx - startx
+        X = endy - starty
     cSize.text = f"{X} {Y} 2.5"
     cPose = ET.SubElement(collision, "pose")
     cPose.text = "0 0 1.25 0 -0 0"
@@ -59,10 +59,10 @@ def createWall(
     mUri.text = "file://media/materials/scripts/gazebo.material"
     mName.text = "Gazebo/White"
 
-    velocity_decay = ET.SubElement(link, "velocity_decay")
-    vdLinear = ET.SubElement(velocity_decay, "linear")
-    vdLinear.text = "0"
-    vdAngular = ET.SubElement(velocity_decay, "angular")
-    vdAngular.text = "0"
+    # velocity_decay = ET.SubElement(link, "velocity_decay")
+    # vdLinear = ET.SubElement(velocity_decay, "linear")
+    # vdLinear.text = "0"
+    # vdAngular = ET.SubElement(velocity_decay, "angular")
+    # vdAngular.text = "0"
     pose = ET.SubElement(link, "pose")
     pose.text = f"{startx + (endx-startx)/2 - offsetX} {starty + (endy-starty)/2 - offsetY} 0 0 -0 {zRot}"
