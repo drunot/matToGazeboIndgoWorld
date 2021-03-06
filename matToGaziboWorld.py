@@ -4,9 +4,20 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Takes 3 arguments: <mat-file-path> <init-pos-x,init-pos-y> <world-name>")
+    if len(sys.argv) != 4 and len(sys.argv) != 5:
+        print(
+            "Takes 3 arguments: <mat-file-path> <init-pos-x,init-pos-y> <world-name> (<scaling-divider>)"
+        )
         exit(1)
+    if len(sys.argv) == 5:
+        try:
+            scaling = int(sys.argv[4])
+        except:
+            print("Scaling must be a number")
+            exit(1)
+    else:
+        scaling = 1
+
     worldName = sys.argv[3]
     pos = sys.argv[2].split(",")
     try:
@@ -38,6 +49,7 @@ if __name__ == "__main__":
             f"Wall_{num}",
             initX,
             initY,
+            scaling,
         )
 
     MatToGaziboWorld.createGaziboFiles(sdfHead, worldName)

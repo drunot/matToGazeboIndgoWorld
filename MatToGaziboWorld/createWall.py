@@ -11,6 +11,7 @@ def createWall(
     name: str,
     offsetX: int = 0,
     offsetY: int = 0,
+    scaling: int = 1,
 ):
     # Make sure end is the largest,
     if startx > endx:
@@ -39,6 +40,8 @@ def createWall(
     else:
         Y = endx - startx
         X = endy - starty
+    Y /= scaling
+    X /= scaling
     cSize.text = f"{X} {Y} 2.5"
     cPose = ET.SubElement(collision, "pose")
     cPose.text = "0 0 1.25 0 -0 0"
@@ -65,4 +68,4 @@ def createWall(
     # vdAngular = ET.SubElement(velocity_decay, "angular")
     # vdAngular.text = "0"
     pose = ET.SubElement(link, "pose")
-    pose.text = f"{startx + (endx-startx)/2 - offsetX} {starty + (endy-starty)/2 - offsetY} 0 0 -0 {zRot}"
+    pose.text = f"{(startx + (endx-startx)/2)/scaling - offsetX} {(starty + (endy-starty)/2)/scaling - offsetY} 0 0 -0 {zRot}"
