@@ -12,7 +12,7 @@ class Rectangle:
         return f"P1: [{self.x_min}, {self.y_min}], P2: [{self.x_max}, {self.y_max}]"
 
 
-def mat2rect(mat):
+def matToRect(mat):
     mat = mat["map"]
     mat = np.flip(mat, 0)
     rectangles = []
