@@ -35,7 +35,7 @@ The scaling devider devides the whole map with the specified devision. So a 100x
 ### Using the output files
 
 The three output files can be moved to the VM using secure copy. Once on the VM
-the `*.launch`-file should be moved to the path `/opt/ros/indigo/share/turtlebot_gazebo/launch/`. The `*.world`-file whould be moved to `/opt/ros/indigo/share/turtlebot_gazebo/world/`. Now you can open gazibo with the given world by runnning the `*.sh`-file. Note that if you get an error running the script this might be because it was generated in windos. To fix this simply run:
+the `*.launch`-file should be moved to the path `/opt/ros/indigo/share/turtlebot_gazebo/launch/`. The `*.world`-file whould be moved to `/opt/ros/indigo/share/turtlebot_gazebo/world/`. Now you can open gazibo with the given world by runnning the `*.sh`-file. Note that if you get an error running the script this might be because it was generated in Windows. To fix this simply run:
 
 ```bash
 sed -i -e 's/\r$//' <script-name>.sh
