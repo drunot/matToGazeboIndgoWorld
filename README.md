@@ -1,6 +1,6 @@
-# Mat To Gazibo world
+# Mat To Gazebo world
 
-This is a project that aims to make it easier to transfer a map made in matlab and into Gazibo Indigo. Please note that the only tested version of Gazibo used to test this with is the one linked to [here](https://se.mathworks.com/support/product/robotics/v3-installation-instructions.html) running in a virtual machine (VM) made by MatLab.
+This is a project that aims to make it easier to transfer a map made in matlab and into Gazebo Indigo. Please note that the only tested version of Gazebo used to test this with is the one linked to [here](https://se.mathworks.com/support/product/robotics/v3-installation-instructions.html) running in a virtual machine (VM) made by MatLab.
 
 ## How to use the script
 
@@ -23,7 +23,7 @@ python3 -m pip install -r requirements.txt
 When running the script call:
 
 ```bash
-ptyhon3 matToGaziboWorld.py <path-to-mat-file> <offsetX,offsetY> <world-name> (<scaling-divider>)
+ptyhon3 matToGazeboWorld.py <path-to-mat-file> <offsetX,offsetY> <world-name> (<scaling-divider>)
 ```
 
 Here will the offset be the starting point for the turtlebot. It is important to notice tha the turtlebot will always start in 0. This offset moves the map so the walls is correct relatively to the turtlebot. The offset should be specified in one word with two whole numbers. An example with an offset of 4 in x and 2 in y would be: `4,2`.
