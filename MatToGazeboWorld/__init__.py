@@ -3,4 +3,4 @@ from .newModel import newModel
 from .createSDF import createSDF
 from .createWall import createWall
 from .createWorld import createWorld
-from .createGaziboFiles import createGaziboFiles
+from .createGazeboFiles import createGazeboFiles

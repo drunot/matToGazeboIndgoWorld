@@ -1,5 +1,5 @@
 import scipy.io
-import MatToGaziboWorld
+import MatToGazeboWorld
 import sys
 
 
@@ -27,9 +27,9 @@ if __name__ == "__main__":
         print("Position must by in format: int,int")
         exit(1)
 
-    sdfHead = MatToGaziboWorld.createSDF()
-    world = MatToGaziboWorld.createWorld(sdfHead)
-    myModel = MatToGaziboWorld.newModel(world, "myModel")
+    sdfHead = MatToGazeboWorld.createSDF()
+    world = MatToGazeboWorld.createWorld(sdfHead)
+    myModel = MatToGazeboWorld.newModel(world, "myModel")
     # create the file structure
     try:
         mat = scipy.io.loadmat(sys.argv[1])
@@ -37,10 +37,10 @@ if __name__ == "__main__":
         print("Error in opening file")
         exit(1)
 
-    rects = MatToGaziboWorld.matToRect(mat)
+    rects = MatToGazeboWorld.matToRect(mat)
 
     for num, rect in enumerate(rects):
-        MatToGaziboWorld.createWall(
+        MatToGazeboWorld.createWall(
             rect.x_min,
             rect.y_min,
             rect.x_max,
@@ -52,4 +52,4 @@ if __name__ == "__main__":
             scaling,
         )
 
-    MatToGaziboWorld.createGaziboFiles(sdfHead, worldName)
+    MatToGazeboWorld.createGazeboFiles(sdfHead, worldName)

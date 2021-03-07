@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 
-def createGaziboFiles(sdfHead, worldName: str):
+def createGazeboFiles(sdfHead, worldName: str):
     worldData = ET.tostring(sdfHead, encoding="utf-8", xml_declaration=True)
     worldFile = open(f"turtlebot_mw_{worldName}.world", "wb")
     worldFile.write(worldData)
